@@ -8,12 +8,16 @@ public class Dealership {
     private String address;
     private String phone;
     private ArrayList<Vehicle> inventory;
+    private ArrayList<Vehicle> saleVehicles;
+    private ArrayList<Vehicle> leasedVehicles;
 
-    public Dealership(String name, String address, String phone) {
+    public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory, ArrayList<Vehicle> saleVehicles, ArrayList<Vehicle> leasedVehicles) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = new ArrayList<>();
+        this.inventory = inventory;
+        this.saleVehicles = saleVehicles;
+        this.leasedVehicles = leasedVehicles;
     }
 
     public String getName() {
@@ -38,6 +42,30 @@ public class Dealership {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public ArrayList<Vehicle> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Vehicle> inventory) {
+        this.inventory = inventory;
+    }
+
+    public ArrayList<Vehicle> getSaleVehicles() {
+        return saleVehicles;
+    }
+
+    public void setSaleVehicles(ArrayList<Vehicle> saleVehicles) {
+        this.saleVehicles = saleVehicles;
+    }
+
+    public ArrayList<Vehicle> getLeasedVehicles() {
+        return leasedVehicles;
+    }
+
+    public void setLeasedVehicles(ArrayList<Vehicle> leasedVehicles) {
+        this.leasedVehicles = leasedVehicles;
     }
 
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
@@ -111,4 +139,6 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle) {
         inventory.remove(vehicle);
     }
+
+
 }
