@@ -2,8 +2,29 @@ package com.pluralsight;
 
 public class LeaseContract extends Contract{
 
-    public LeaseContract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment) {
+    private double expectedEndingValue;
+    private double leaseFee;
+
+    public LeaseContract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment, double expectedEndingValue, double leaseFee) {
         super(contractDate, customerName, customerEmail, vehicleSold, totalPrice, monthlyPayment);
+        this.expectedEndingValue = expectedEndingValue;
+        this.leaseFee = leaseFee;
+    }
+
+    public double getExpectedEndingValue() {
+        return expectedEndingValue;
+    }
+
+    public void setExpectedEndingValue(double expectedEndingValue) {
+        this.expectedEndingValue = expectedEndingValue;
+    }
+
+    public double getLeaseFee() {
+        return leaseFee;
+    }
+
+    public void setLeaseFee(double leaseFee) {
+        this.leaseFee = leaseFee;
     }
 
     @Override

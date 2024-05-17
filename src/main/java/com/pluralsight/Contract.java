@@ -2,7 +2,7 @@ package com.pluralsight;
 
 public abstract class Contract {
 
-    private String contractDate;
+    private String contractOFDate;
     private String customerName;
     private String customerEmail;
     private double vehicleSold;
@@ -10,7 +10,7 @@ public abstract class Contract {
     private double monthlyPayment;
 
     public Contract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment) {
-        this.contractDate = contractDate;
+        this.contractOFDate = contractDate;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.vehicleSold = vehicleSold;
@@ -19,11 +19,11 @@ public abstract class Contract {
     }
 
     public String getContractDate() {
-        return contractDate;
+        return contractOFDate;
     }
 
     public void setContractDate(String contractDate) {
-        this.contractDate = contractDate;
+        this.contractOFDate = contractDate;
     }
 
     public String getCustomerName() {
