@@ -44,6 +44,24 @@ public class LeaseContract extends Contract{
 
     @Override
     public String getPersistence() {
-        return null;
+        StringBuilder builder = new StringBuilder();
+        builder.append("Lease").append("|");
+        builder.append(getContractOFDate()).append("|");
+        builder.append(getCustomerName()).append("|");
+        builder.append(getCustomerEmail()).append("|");
+        builder.append(getVehicleSold().getVin()).append("|");
+        builder.append(getVehicleSold().getYear()).append("|");
+        builder.append(getVehicleSold().getMake()).append("|");
+        builder.append(getVehicleSold().getModel()).append("|");
+        builder.append(getVehicleSold().getColor()).append("|");
+        builder.append(getVehicleSold().getVehicleType()).append("|");
+        builder.append(getVehicleSold().getOdometer()).append("|");
+        builder.append(getVehicleSold().getPrice()).append("|");
+        builder.append(getExpectedEndingValue()).append("|");
+        builder.append(getLeaseFee()).append("|");
+        builder.append(getTotalPrice()).append("|");
+        builder.append(getMonthlyPayment()).append("|");
+
+        return builder.toString();
     }
 }
