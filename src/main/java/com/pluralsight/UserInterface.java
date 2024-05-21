@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -231,6 +233,26 @@ public class UserInterface {
 
     }
 
-    
+    public void createSalesContract(Vehicle vehicle){
+        System.out.println("Creating sales Contract");
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String contractOfDate = currentDate.format(dateFormatter);
+
+        System.out.println("Enter Customer name: ");
+        String customerName = scanner.nextLine().trim();
+
+        System.out.println("Enter Customer email: ");
+        String customerEmail = scanner.nextLine().trim();
+        // calculating sales tax amount 5% vehicle price
+        double salesTaxAmount = vehicle.getPrice() * 0.05;
+        double recordingFee = 100.00;
+        double processingFee = (vehicle.getPrice() < 10000) ? 295.00 : 495.00;
+        System.out.println("Enter finance (yes/no): ");
+        boolean finance = Boolean.parseBoolean(scanner.nextLine());
+
+
+        
+    }
 
 }
