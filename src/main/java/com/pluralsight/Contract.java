@@ -2,12 +2,12 @@ package com.pluralsight;
 
 public abstract class Contract {
 
-    private String contractOFDate;
-    private String customerName;
-    private String customerEmail;
-    private double vehicleSold;
-    private double totalPrice;
-    private double monthlyPayment;
+    protected String contractOFDate;
+    protected String customerName;
+    protected String customerEmail;
+    protected double vehicleSold;
+    protected double totalPrice;
+    protected double monthlyPayment;
 
     public Contract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment) {
         this.contractOFDate = contractDate;
