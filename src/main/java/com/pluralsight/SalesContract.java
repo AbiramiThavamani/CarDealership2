@@ -7,8 +7,9 @@ public class SalesContract extends Contract{
     private double processingFees;
     private boolean finance;
 
-    public SalesContract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment, double salesTaxAmount, double recordingFees, double processingFees, boolean finance) {
-        super(contractDate, customerName, customerEmail, vehicleSold, totalPrice, monthlyPayment);
+
+    public SalesContract(String contractOFDate, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double monthlyPayment, double salesTaxAmount, double recordingFees, double processingFees, boolean finance) {
+        super(contractOFDate, customerName, customerEmail, vehicleSold, totalPrice, monthlyPayment);
         this.salesTaxAmount = salesTaxAmount;
         this.recordingFees = recordingFees;
         this.processingFees = processingFees;
@@ -83,8 +84,23 @@ public class SalesContract extends Contract{
         builder.append(getContractOFDate()).append("|");
         builder.append(getCustomerName()).append("|");
         builder.append(getCustomerEmail()).append("|");
+        builder.append(getVehicleSold().getVin()).append("|");
+        builder.append(getVehicleSold().getYear()).append("|");
+        builder.append(getVehicleSold().getMake()).append("|");
+        builder.append(getVehicleSold().getModel()).append("|");
+        builder.append(getVehicleSold().getColor()).append("|");
+        builder.append(getVehicleSold().getVehicleType()).append("|");
+        builder.append(getVehicleSold().getOdometer()).append("|");
+        builder.append(getVehicleSold().getPrice()).append("|");
+        builder.append(getSalesTaxAmount()).append("|");
+        builder.append(getRecordingFees()).append("|");
+        builder.append(getProcessingFees()).append("|");
+        builder.append(getTotalPrice()).append("|");
+        builder.append(isFinance() ? "Yes" : "No").append("|");
+        builder.append(getMonthlyPayment()).append("|");
 
 
+        return builder.toString();
     }
 
 

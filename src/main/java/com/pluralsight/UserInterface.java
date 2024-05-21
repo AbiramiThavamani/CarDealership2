@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
+import static sun.awt.windows.WGlobalCursorManager.manager;
+
 public class UserInterface {
 
     private Dealership dealership;
@@ -199,19 +201,19 @@ public class UserInterface {
         }
     }
 
-    public void processCreateContractRequest(){
+    public void processCreateContractRequest() {
         System.out.println("Enter Vin of the Vehicle: ");
         int vin = scanner.nextInt();
 
         Vehicle vehicle = null;
-        for (Vehicle vehicle1 : dealership.getAllVehicles()){
-            if (vehicle1.getVin() == vin){
+        for (Vehicle vehicle1 : dealership.getAllVehicles()) {
+            if (vehicle1.getVin() == vin) {
                 vehicle = vehicle1;
                 break;
             }
         }
 
-        if (vehicle != null){
+        if (vehicle != null) {
             System.out.println("Select the contract type:");
             System.out.println("1 Sales Contract");
             System.out.println("2 Lease Contract ");
@@ -219,10 +221,10 @@ public class UserInterface {
             int contractTypeChoice = scanner.nextInt();
 
 
-            if (contractTypeChoice == 1){
+            if (contractTypeChoice == 1) {
                 createSalesContract(vehicle);
 
-            } else if (contractTypeChoice == 2){
+            } else if (contractTypeChoice == 2) {
                 crateLeaseContract(vehicle);
             } else {
                 System.out.println("Invalid contract type choice");
@@ -233,7 +235,7 @@ public class UserInterface {
 
     }
 
-    public void createSalesContract(Vehicle vehicle){
+    public void createSalesContract(Vehicle vehicle) {
         System.out.println("Creating sales Contract");
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
@@ -252,7 +254,49 @@ public class UserInterface {
         boolean finance = Boolean.parseBoolean(scanner.nextLine());
 
 
-        
+        String formattedSalesTaxAmount = String.format("%.2f", salesTaxAmount);
+        String formattedRecordingFee = String.format("%.2f", recordingFee);
+        String formattedProcessingFee = String.format("%.2f", processingFee);
+        SalesContract salesContract = new SalesContract(contractOfDate, customerName, customerEmail, vehicle, Double.parseDouble(formattedSalesTaxAmount), Double.parseDouble(formattedRecordingFee),
+                Double.parseDouble(formattedProcessingFee), finance);
+        ContractFileManager.saveContract(salesContract);
+
+        dealership.removeVehicle(vehicle);
+        DealershipFileManager manager = new DealershipFileManager();
+        manager.saveDealership(dealership);
+
+        System.out.println("Sales contract created and saved.");
     }
 
+
+    public void crateLeaseContract(Vehicle vehicle) {
+        System.out.println("Creating Lease Contract");
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String contractOfDate = currentDate.format(dateFormatter);
+
+        System.out.println("Enter Customer name: ");
+        String customerName = scanner.nextLine().trim();
+
+        System.out.println("Enter Customer email: ");
+        String customerEmail = scanner.nextLine().trim();
+
+        double expectedEndingValue = vehicle.getPrice() * 0.5;
+        double leaseFee = vehicle.getPrice() * 0.07;
+        String formattedExpectedEndingValue = String.format("%.2f", expectedEndingValue);
+        String formattedLeaseFee = String.format("%.2f", leaseFee);
+
+        LeaseContract leaseContract = new LeaseContract(contractOfDate, customerName, customerEmail, vehicle, Double.parseDouble(formattedExpectedEndingValue), Double.parseDouble(formattedLeaseFee));
+                ContractFileManager.saveContract(leaseContract);
+
+        dealership.removeVehicle(vehicle);
+        DealershipFileManager manager = new DealershipFileManager();
+        manager.saveDealership(dealership);
+
+        System.out.println("lease contract created and saved.");
+    }
+
+
 }
+
+
