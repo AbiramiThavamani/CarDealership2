@@ -49,14 +49,16 @@ public class SalesContract extends Contract{
 
     @Override
     public double getTotalPrice() {
-        return getVehicleSold().getPrice() + salesTaxAmount + recordingFee + processingFee;
+       double vehiclePrice = getVehicleSold().getPrice();
+       double totalPrice = vehiclePrice + getSalesTaxAmount() + recordingFees + processingFees;
+       return totalPrice;
     }
 
     @Override
     public double getMonthlyPayment() {
         int numberOfPayments = 0;
         double interestRate = 0;
-        if (financeOption) {
+        if (finance) {
             if (getVehicleSold().getPrice() >= 10000) {
                 numberOfPayments = 48;
                 interestRate = 4.25 / 1200;
@@ -73,4 +75,17 @@ public class SalesContract extends Contract{
             return 0.0;
         }
     }
+
+    @Override
+    public String getPersistence() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("SALE").append("|");
+        builder.append(getContractOFDate()).append("|");
+        builder.append(getCustomerName()).append("|");
+        builder.append(getCustomerEmail()).append("|");
+
+
+    }
+
+
 }

@@ -26,7 +26,8 @@ public class UserInterface {
             System.out.println("7. Get all vehicles");
             System.out.println("8. Add vehicle");
             System.out.println("9. Remove vehicle");
-            System.out.println("99. Quit");
+            System.out.println("10.Create ContractRequest");
+            System.out.println("11. Quit");
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
@@ -59,7 +60,9 @@ public class UserInterface {
                 case "9":
                     processRemoveVehicleRequest();
                     break;
-                case "99":
+                case "10":
+                    processCreateContractRequest();
+                case "11":
                     quit = true;
                     break;
                 default:
@@ -193,5 +196,41 @@ public class UserInterface {
             System.out.println(vehicle.toString());
         }
     }
+
+    public void processCreateContractRequest(){
+        System.out.println("Enter Vin of the Vehicle: ");
+        int vin = scanner.nextInt();
+
+        Vehicle vehicle = null;
+        for (Vehicle vehicle1 : dealership.getAllVehicles()){
+            if (vehicle1.getVin() == vin){
+                vehicle = vehicle1;
+                break;
+            }
+        }
+
+        if (vehicle != null){
+            System.out.println("Select the contract type:");
+            System.out.println("1 Sales Contract");
+            System.out.println("2 Lease Contract ");
+            System.out.println("Enter your choice: ");
+            int contractTypeChoice = scanner.nextInt();
+
+
+            if (contractTypeChoice == 1){
+                createSalesContract(vehicle);
+
+            } else if (contractTypeChoice == 2){
+                crateLeaseContract(vehicle);
+            } else {
+                System.out.println("Invalid contract type choice");
+            }
+        } else {
+            System.out.println("vehicle not found");
+        }
+
+    }
+
+    
 
 }

@@ -9,8 +9,8 @@ public abstract class Contract {
     protected double totalPrice;
     protected double monthlyPayment;
 
-    public Contract(String contractDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment) {
-        this.contractOFDate = contractDate;
+    public Contract(String contractOFDate, String customerName, String customerEmail, double vehicleSold, double totalPrice, double monthlyPayment) {
+        this.contractOFDate = contractOFDate;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.vehicleSold = vehicleSold;
@@ -18,12 +18,12 @@ public abstract class Contract {
         this.monthlyPayment = monthlyPayment;
     }
 
-    public String getContractDate() {
+    public String getContractOFDate() {
         return contractOFDate;
     }
 
-    public void setContractDate(String contractDate) {
-        this.contractOFDate = contractDate;
+    public void setContractOFDate(String contractOFDate) {
+        this.contractOFDate = contractOFDate;
     }
 
     public String getCustomerName() {
@@ -55,6 +55,8 @@ public abstract class Contract {
 
 
     public abstract double getMonthlyPayment();
+
+    public abstract String getPersistence();
 
 
 }
