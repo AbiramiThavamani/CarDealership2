@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
-import static sun.awt.windows.WGlobalCursorManager.manager;
+
 
 public class UserInterface {
 
@@ -225,7 +225,7 @@ public class UserInterface {
                 createSalesContract(vehicle);
 
             } else if (contractTypeChoice == 2) {
-                crateLeaseContract(vehicle);
+                createLeaseContract(vehicle);
             } else {
                 System.out.println("Invalid contract type choice");
             }
@@ -269,7 +269,7 @@ public class UserInterface {
     }
 
 
-    public void crateLeaseContract(Vehicle vehicle) {
+    public void createLeaseContract(Vehicle vehicle) {
         System.out.println("Creating Lease Contract");
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
@@ -286,7 +286,7 @@ public class UserInterface {
         String formattedExpectedEndingValue = String.format("%.2f", expectedEndingValue);
         String formattedLeaseFee = String.format("%.2f", leaseFee);
 
-        LeaseContract leaseContract = new LeaseContract(contractOfDate, customerName, customerEmail, vehicle, Double.parseDouble(formattedExpectedEndingValue), Double.parseDouble(formattedLeaseFee));
+        LeaseContract leaseContract = new LeaseContract(contractOfDate,customerName,customerEmail, vehicle,Double.parseDouble(formattedExpectedEndingValue),Double.parseDouble(formattedLeaseFee));
                 ContractFileManager.saveContract(leaseContract);
 
         dealership.removeVehicle(vehicle);

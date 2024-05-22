@@ -4,8 +4,15 @@ CarDealership2
 
 ## Description of the Project
 
+The CarDealership project designed to manage the operations of car dealership. The system should cover
+various functionalities, including inventory management, customer management,sales and leasing contracts,
+and dealership fileManager the sales and leasing contracts generate contract with all 
+necessary details. contract manager track customer status they collect the vehicle details like vin, year, color details of vehicle being sold.
+price of vehicle sold it will check customer name,email,id. 
+
 
 ## User Stories
+
 
 ### Prerequisites
 
@@ -34,8 +41,10 @@ Follow these steps to get your application running within IntelliJ IDEA:
 ## Future Work
 
 Additional feature to be developed.
+- In feature keep track of each car maintenance history
 
 Improvement of current functionalities.
+- Provide receipt for sales Car.
 
 
 ## Resources

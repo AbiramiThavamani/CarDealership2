@@ -7,20 +7,15 @@ public class Dealership {
     private String name;
     private String address;
     private String phone;
-    private ArrayList<Vehicle> inventory;
+    private final ArrayList<Vehicle> inventory = new ArrayList<>();
 
 
-    public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory, ArrayList<Vehicle> saleVehicles, ArrayList<Vehicle> leasedVehicles) {
+    public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = inventory;
 
     }
-
-    public Dealership(String name, String address, String phone) {
-    }
-
     public String getName() {
         return name;
     }
@@ -44,15 +39,6 @@ public class Dealership {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public ArrayList<Vehicle> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(ArrayList<Vehicle> inventory) {
-        this.inventory = inventory;
-    }
-
 
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
         List<Vehicle> matchingVehicles = new ArrayList<>();
@@ -115,16 +101,21 @@ public class Dealership {
     }
 
     public List<Vehicle> getAllVehicles() {
-        return inventory;
+           for (Vehicle vehicle: inventory){
+               System.out.println(vehicle);
+           }
+           return inventory;
     }
 
     public void addVehicle(Vehicle vehicle) {
-        inventory.add(vehicle);
+       inventory.add(vehicle);
     }
 
     public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
+       inventory.remove(vehicle);
     }
+
+
 
 
 }

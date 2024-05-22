@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4e69ce90-0bfa-48b6-88ee-71bc02342cf0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dealership.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dealership.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Contract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/ContractFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/ContractFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Dealership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Dealership.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/LeaseContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/SalesContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
@@ -26,6 +29,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="198083a9-9264-4474-8794-70f605b7f4ba" />
+        <option name="url" value="https://github.com/AbiramiThavamani/CarDealership2.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +77,26 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\pluralsight-workshops\CarDealership2" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CarDealership" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.CarDealership" />
+      <module name="CarDealership2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CarDealership" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -6,17 +6,17 @@ public abstract class Contract {
     protected String customerName;
     protected String customerEmail;
     protected Vehicle vehicleSold;
-    protected double totalPrice;
-    protected double monthlyPayment;
 
-    public Contract(String contractOFDate, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double monthlyPayment) {
+
+    public Contract(String contractOFDate, String customerName, String customerEmail, Vehicle vehicleSold) {
         this.contractOFDate = contractOFDate;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.vehicleSold = vehicleSold;
-        this.totalPrice = totalPrice;
-        this.monthlyPayment = monthlyPayment;
+
+
     }
+
 
     public String getContractOFDate() {
         return contractOFDate;
