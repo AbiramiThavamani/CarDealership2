@@ -220,6 +220,22 @@ public class UserInterface {
             System.out.println("Enter your choice: ");
             int contractTypeChoice = scanner.nextInt();
 
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice){
+                case 1:
+                    createSalesContract(vehicle);
+                    break;
+                case 2:
+                    createLeaseContract(vehicle);
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Invalid choice. ");
+
+            }
+
 
             if (contractTypeChoice == 1) {
                 createSalesContract(vehicle);
@@ -242,6 +258,7 @@ public class UserInterface {
         String contractOfDate = currentDate.format(dateFormatter);
 
         System.out.println("Enter Customer name: ");
+        scanner.nextLine();
         String customerName = scanner.nextLine().trim();
 
         System.out.println("Enter Customer email: ");
@@ -276,7 +293,9 @@ public class UserInterface {
         String contractOfDate = currentDate.format(dateFormatter);
 
         System.out.println("Enter Customer name: ");
+        scanner.nextLine();
         String customerName = scanner.nextLine().trim();
+
 
         System.out.println("Enter Customer email: ");
         String customerEmail = scanner.nextLine().trim();

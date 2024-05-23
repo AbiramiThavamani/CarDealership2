@@ -13,6 +13,8 @@ price of vehicle sold it will check customer name,email,id.
 
 ## User Stories
 
+* [Click](https://github.com/AbiramiThavamani/CarDealership2/projects?query=is%3Aopen) 
+
 
 ### Prerequisites
 
@@ -36,7 +38,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-
+<img src="CarDealership2.gif">
 
 ## Future Work
 

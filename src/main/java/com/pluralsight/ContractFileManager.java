@@ -16,7 +16,7 @@ public class ContractFileManager {
     public static void saveContract(Contract contract) {
 
         try
-            (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("contract.csv"))) {
+            (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("contracts.csv",true))) {
 
             bufferedWriter.write(contract.getPersistence() + "\n");
             bufferedWriter.newLine();
